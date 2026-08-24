@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { SignInPage } from './auth/sign-in/index.jsx'
 import { Home } from './home'
 import { Dashboard } from './dashboard'
+import { ClerkProvider } from "@clerk/react"
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <ClerkProvider>
+      <RouterProvider router={router}/>
+    </ClerkProvider>
   </StrictMode>,
 )
