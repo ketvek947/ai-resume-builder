@@ -1,10 +1,12 @@
-import { UserButton } from '@clerk/react'
+
+import { Header } from '@/components/custom/Header'
 import React from 'react'
 
 export const Home = () => {
   return (
     <div>
-      <UserButton/>
+      <Header/>
+      <h1>Home</h1>
     </div>
   )
 }
