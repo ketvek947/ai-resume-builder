@@ -7,6 +7,7 @@ import { SignInPage } from './auth/sign-in/index.jsx'
 import { Home } from './home'
 import { Dashboard } from './dashboard'
 import { ClerkProvider } from "@clerk/react"
+import EditResume from './dashboard/resume/[resumeId]/edit'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: 'dashboard',
         element:<Dashboard/>
+      },
+      {
+        path: 'dashboard/resume/:resumeId/edit',
+        element:<EditResume/>
       }
     ]
   },

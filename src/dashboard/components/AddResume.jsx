@@ -12,12 +12,14 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { useNavigate } from 'react-router-dom'
 
 const AddResume = () => {
     const [openDialog, setOpenDialog] = useState(false);
     const [resumeTitle, setResumeTitle] = useState();
     const {user} = useUser();
     const [loading, setLoading] = useState(false);
+    const navigation = useNavigate();
 
     const onCreate=async()=>{
         setLoading(true);
@@ -35,6 +37,7 @@ const AddResume = () => {
             console.log(res);
             if(res){
                 setLoading(false);
+                navigation('/dashboard/resume/'+res.data.data.documentId+'/edit');
             }
 
         },(error)=>{
