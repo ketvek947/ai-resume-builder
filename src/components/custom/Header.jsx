@@ -4,7 +4,7 @@ import { UserButton, useUser } from '@clerk/react'
 import { Link } from 'react-router-dom'
 
 export const Header = () => {
-  const {user, isSignedIn} = useUser();
+  const {isSignedIn} = useUser();
   return (
     <div className = "flex justify-between p-3 px-5 shadow-md">
       <img src = "/logo.svg" width = {50} height = {50} alt = "logo"/>
